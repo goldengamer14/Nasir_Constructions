@@ -22,6 +22,7 @@ body {
     padding: 20px;
     font-family: Arial, sans-serif;
     display: flex;
+    flex-direction: column;
     justify-content: center;
 }
 
@@ -47,6 +48,66 @@ body {
 
 .header-gradient {
     background: linear-gradient(135deg, #712cf9, #3d0af5);
+}
+
+
+.service-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 1rem;
+}
+
+.service-description {
+    font-size: 1rem;
+    color: #6c757d;
+}
+
+.btn-custom {
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+}
+
+.service-card {
+    height: 100%;
+    border: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #007bff;
+}
+
+#ServicesContent {
+    padding: 3rem 1rem;
+}
+
+#ServicesContent h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+#ServicesContent .intro-text {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 3rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #tagline {
@@ -76,6 +137,16 @@ body {
     padding: 10px 15px;
 }
 
+#HomeForm .form-check-label {
+    margin-left: 1rem;
+    font-weight: 500;
+}
+
+.form-check-input,
+.form-check-label {
+    cursor: pointer;
+}
+
 /* Focus effect: Green highlight instead of default blue */
 /* #HomeForm .form-control:focus,
 #HomeForm .form-select:focus {
@@ -83,7 +154,7 @@ body {
     box-shadow: 0 0 0 0.25rem rgba(40, 177, 40, 0.25);
 } */
 
-#HomeSubmit {
+#HomeSubmit, #download-brochure {
     background-color: #1d7a1d;
     color: #fff;
     border: none;
@@ -91,7 +162,7 @@ body {
     letter-spacing: 1px;
 }
 
-#HomeSubmit:hover {
+#HomeSubmit:hover, #download-brochure:hover {
     background-color: #28b128;
     color: #fff;
     transform: translateY(-2px);
@@ -116,6 +187,7 @@ body {
 #ContactContent {
     max-width: fit-content;
     margin: auto;
+    margin-top: 20vh;
     font-size: large;
     line-height: 1.6;
     letter-spacing: 1px;
@@ -123,15 +195,10 @@ body {
 }
 
 #download-brochure {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
     border-radius: 50px;
+    font-size: x-large;
+    padding: 12px 30px;
     cursor: pointer;
-    width: 409px;
-    height: 145px;
-    font-size: xx-large;
 }
 
 #email-domain-select,
@@ -152,7 +219,6 @@ body {
     justify-content: center;
     overflow: hidden;
     position: relative;
-    /* Context for the images */
 }
 
 .home-img {
@@ -163,7 +229,7 @@ body {
     object-fit: contain;
 }
 
-/* Button Styling - Keeps them from disturbing layout */
+
 .carousel-controls {
     position: absolute;
     top: 50%;
