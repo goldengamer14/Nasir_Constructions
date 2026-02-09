@@ -4,20 +4,11 @@ const homeForm = document.getElementById("HomeForm");
 const img = {
     previous: document.getElementById("img-previous"),
     next: document.getElementById("img-next"),
-    homeImgs: Array.from(document.getElementById("home-imgs").children)
+    homeImgsWrapper: document.getElementById("home-imgs-wrapper"),
+    homeImgs: document.getElementById("home-imgs"), // The container div
+    homeImgElements: Array.from(document.getElementsByClassName("home-img")), // Individual images
+    carouselIndicators: Array.from(document.getElementsByClassName("carousel-indicator"))
 }
-
-// const user = {
-//     email: document.getElementById("email-user"),
-//     name: document.getElementById("user-name"),
-//     phone: {
-//         country: document.getElementById("phone-country"),
-//         number: document.getElementById("phone-number")
-//     },
-//     address: document.getElementById("user-address"),
-//     city: document.getElementById("user-city"),
-//     state: document.getElementById("user-state")
-// }
 
 
 const emailDomain = {
@@ -115,34 +106,72 @@ img.next.addEventListener("click", showNextImage);
 
 img.previous.addEventListener("click", showPreviousImage);
 
-let imageTransitionInterval = setInterval(showNextImage, 2000);
+let currentIndex = 0;
+let imageTransitionInterval;
+
+// Update carousel position
+function updateCarousel(newIndex) {
+    // Update current index
+    currentIndex = newIndex;
+
+    // Calculate transform percentage
+    const translateX = -currentIndex * 50; // 50% per slide
+    img.homeImgs.style.transform = `translateX(${translateX}%)`;
+
+    // Update active states for images
+    img.homeImgElements.forEach((homeImg, index) => {
+        homeImg.classList.toggle("active", index === currentIndex);
+    });
+
+    // Update indicators
+    img.carouselIndicators.forEach((carouselIndicator, index) => {
+        carouselIndicator.classList.toggle("active", index === currentIndex);
+    });
+}
+
+// Reset auto-play interval
+function resetInterval() {
+    clearInterval(imageTransitionInterval);
+    imageTransitionInterval = setInterval(showNextImage, 3000);
+}
 
 function showNextImage(e) {
     e?.preventDefault();
 
-    for (let i = 0; i < img.homeImgs.length; i++)
-        if (img.homeImgs[i].style.display != "none") {
-            img.homeImgs[i].style.display = "none";
-            (img.homeImgs[i + 1] ?? img.homeImgs[0]).style.display = "block";
+    const nextIndex = (currentIndex + 1) % img.homeImgElements.length;
+    updateCarousel(nextIndex);
 
-            clearInterval(imageTransitionInterval);
-            imageTransitionInterval = setInterval(showNextImage, 2000);
-
-            return (img.homeImgs[i + 1] ?? img.homeImgs[0]);
-        }
+    resetInterval();
 }
 
 function showPreviousImage(e) {
     e?.preventDefault();
 
-    for (let i = img.homeImgs.length - 1; i >= 0; i--)
-        if (img.homeImgs[i].style.display != "none") {
-            img.homeImgs[i].style.display = "none";
-            img.homeImgs.at(i - 1).style.display = "block";
+    const prevIndex = (currentIndex - 1 + img.homeImgElements.length) % img.homeImgElements.length;
+    updateCarousel(prevIndex);
 
-            clearInterval(imageTransitionInterval);
-            imageTransitionInterval = setInterval(showNextImage, 2000);
-
-            return img.homeImgs.at(i - 1);
-        }
+    resetInterval();
 }
+
+// Indicator click handlers
+img.carouselIndicators.forEach((carouselIndicator, index) => {
+    carouselIndicator.addEventListener("click", () => {
+        updateCarousel(index);
+        resetInterval();
+    });
+});
+
+// Pause on hover
+if (img.homeImgsWrapper) {
+    img.homeImgsWrapper.addEventListener("mouseenter", () => {
+        clearInterval(imageTransitionInterval);
+    });
+
+    img.homeImgsWrapper.addEventListener("mouseleave", () => {
+        imageTransitionInterval = setInterval(showNextImage, 3000);
+    });
+}
+
+// Initialize and start auto-play
+updateCarousel(0);
+imageTransitionInterval = setInterval(showNextImage, 3000);
