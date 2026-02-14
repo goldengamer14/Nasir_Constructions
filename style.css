@@ -82,9 +82,6 @@ body {
 /* ===== End About Page Styles ===== */
 
 #navbar {
-    position: fixed;
-    top: 0px;
-
     width: 100%;
 }
 
@@ -304,10 +301,8 @@ body {
 #HomeForm {
     border: none;
     /* Removed the heavy black border */
-    background-color: #ffffff;
-    padding: 30px;
     width: 100%;
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto;
     border-top: 5px solid #1d7a1d;
     /* Brand accent top border */
