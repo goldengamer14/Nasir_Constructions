@@ -1,2 +1,7 @@
-imgs/
-content.txt 
+*.zip
+*.gz
+QUICKSTART.md
+
+frontend/public/imgs/
+frontend/content.txt
+*node_modules/

@@ -1,0 +1,24 @@
+{
+  "name": "nasir_constructions",
+  "version": "1.0.0",
+  "description": "Nasir Constructions - Construction Company Website",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "npm run dev --workspace=frontend",
+    "build": "npm run build --workspace=frontend",
+    "preview": "npm run preview --workspace=frontend",
+    "install-all": "npm install && npm install --workspaces",
+    "clean": "npm run clean --workspaces && rm -rf node_modules",
+    "fresh-install": "npm run clean && npm run install-all"
+  },
+  "workspaces": [
+    "frontend"
+  ],
+  "keywords": [
+    "construction",
+    "real-estate"
+  ],
+  "author": "Nasir Constructions",
+  "license": "ISC"
+}
