@@ -3,16 +3,13 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/RadioGroup";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { ImageCarousel } from "@/components/ImageCarousel";
 import { Header } from "@/components/Header";
 import type { CarouselImage, UserFormData } from "@/types";
 
-const carouselImages: CarouselImage[] = [
-  { src: "/imgs/Certificate.jpg", alt: "Certificate 1" },
-  { src: "/imgs/Certificate_2.jpg", alt: "Certificate 2" },
-];
+import { carouselImages } from "@/constants/images";
 
 export const HomePage = () => {
   const [formData, setFormData] = useState<UserFormData>({
@@ -38,9 +35,9 @@ export const HomePage = () => {
       <Header />
 
       {/* Tagline Card */}
-      <Card className="border-0 bg-gradient-to-r from-primary to-primary/80 shadow-lg">
+      <Card id="tagline-background" className="border-0 shadow-lg">
         <CardContent className="py-6 text-center">
-          <h1 className="text-2xl font-bold text-primary-foreground md:text-3xl">
+          <h1 id="tagline" className="text-2xl font-bold text-primary-foreground md:text-3xl">
             STRONG CONSTRUCTION, YOUR UNBREAKABLE TRUST
           </h1>
         </CardContent>
@@ -63,7 +60,7 @@ export const HomePage = () => {
 
       {/* Features Section */}
       <div className="space-y-8">
-        <Card className="border-border">
+        <Card className="border-border hover:shadow-md transition-all duration-300 hover:-translate-y-2 hover:border-primary">
           <CardHeader className="text-center">
             <CardTitle className="text-4xl">Al Nasir Group Of India</CardTitle>
           </CardHeader>
@@ -76,7 +73,7 @@ export const HomePage = () => {
         </Card>
 
         <div className="grid gap-6 md:grid-cols-3">
-          <Card className="border-border hover:shadow-md transition-shadow">
+          <Card className="border-border hover:shadow-md transition-all duration-300 hover:-translate-y-2 hover:border-primary">
             <CardContent className="pt-6 text-center">
               <div className="mb-4 text-5xl">✅</div>
               <h5 className="mb-2 font-bold">गुणवत्ता सामग्री</h5>
@@ -86,7 +83,7 @@ export const HomePage = () => {
             </CardContent>
           </Card>
 
-          <Card className="border-border hover:shadow-md transition-shadow">
+          <Card className="border-border hover:shadow-md transition-all duration-300 hover:-translate-y-2 hover:border-primary">
             <CardContent className="pt-6 text-center">
               <div className="mb-4 text-5xl">✅</div>
               <h5 className="mb-2 font-bold">जलद वितरण</h5>
@@ -96,7 +93,7 @@ export const HomePage = () => {
             </CardContent>
           </Card>
 
-          <Card className="border-border hover:shadow-md transition-shadow">
+          <Card className="border-border hover:shadow-md transition-all duration-300 hover:-translate-y-2 hover:border-primary">
             <CardContent className="pt-6 text-center">
               <div className="mb-4 text-5xl">✅</div>
               <h5 className="mb-2 font-bold">तज्ञ टीम</h5>
@@ -160,7 +157,7 @@ export const HomePage = () => {
               <Label htmlFor="phone">Phone Number</Label>
               <div className="flex gap-2">
                 <div className="flex items-center">
-                  <span className="flex h-10 items-center rounded-l-md border border-r-0 border-input bg-background px-3 text-sm text-muted-foreground">
+                  <span className="flex h-9 items-center rounded-l-md border border-r-0 border-input bg-background px-3 text-sm text-muted-foreground">
                     +
                   </span>
                   <Input

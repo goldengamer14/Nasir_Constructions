@@ -1,8 +1,11 @@
-import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/utils/cn";
 import type { NavItem } from "@/types";
+import { Moon, Sun } from "lucide-react";
+
+import { useState } from "react";
+import { useTheme } from "@/components/refine-ui/theme/theme-provider";
 
 const navItems: NavItem[] = [
   { key: "home", label: "Home", path: "/" },
@@ -15,6 +18,8 @@ const navItems: NavItem[] = [
 ];
 
 export const Navbar = () => {
+  const { theme, setTheme } = useTheme();
+
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
@@ -31,13 +36,13 @@ export const Navbar = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-1">
+            <div className="ml-10 flex items-baseline space-x-2">
               {navItems.map((item) => (
                 <Link
                   key={item.key}
                   to={item.path}
                   className={cn(
-                    "rounded-[var(--radius-md)] px-4 py-2 text-sm font-medium transition-all duration-200",
+                    "rounded-[var(--radius-md)] px-4 py-2 text-sm font-medium transition-all duration-200 nav-item-hover",
                     location.pathname === item.path
                       ? "bg-primary text-primary-foreground shadow-sm"
                       : "text-muted-foreground hover:bg-accent hover:text-accent-foreground"
@@ -46,8 +51,17 @@ export const Navbar = () => {
                   {item.label}
                 </Link>
               ))}
+
             </div>
           </div>
+
+          {/* Theme Setter */}
+          <button
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            className="ml-4 rounded-md p-2 hover:bg-accent"
+          >
+            {theme === "dark" ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
+          </button>
 
           {/* Mobile menu button */}
           <div className="md:hidden">

@@ -11,10 +11,11 @@ import {
   FutureProjectPage,
   ContactPage,
 } from "@/pages/OtherPages";
+import { ThemeProvider } from "@/components/refine-ui/theme/theme-provider";
 
 const Layout = () => {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-background">
       <Navbar />
       <main className="pt-20">
         <Outlet />
@@ -25,53 +26,55 @@ const Layout = () => {
 
 function App() {
   return (
-    <BrowserRouter>
-      <Refine
-        routerProvider={routerProvider}
-        resources={[
-          {
-            name: "home",
-            list: "/",
-          },
-          {
-            name: "about",
-            list: "/about",
-          },
-          {
-            name: "services",
-            list: "/services",
-          },
-          {
-            name: "projects-done",
-            list: "/projects-done",
-          },
-          {
-            name: "current-project",
-            list: "/current-project",
-          },
-          {
-            name: "future-project",
-            list: "/future-project",
-          },
-          {
-            name: "contact",
-            list: "/contact",
-          },
-        ]}
-      >
-        <Routes>
-          <Route element={<Layout />}>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/services" element={<ServicesPage />} />
-            <Route path="/projects-done" element={<ProjectsDonePage />} />
-            <Route path="/current-project" element={<CurrentProjectPage />} />
-            <Route path="/future-project" element={<FutureProjectPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-          </Route>
-        </Routes>
-      </Refine>
-    </BrowserRouter>
+    <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
+      <BrowserRouter>
+        <Refine
+          routerProvider={routerProvider}
+          resources={[
+            {
+              name: "home",
+              list: "/",
+            },
+            {
+              name: "about",
+              list: "/about",
+            },
+            {
+              name: "services",
+              list: "/services",
+            },
+            {
+              name: "projects-done",
+              list: "/projects-done",
+            },
+            {
+              name: "current-project",
+              list: "/current-project",
+            },
+            {
+              name: "future-project",
+              list: "/future-project",
+            },
+            {
+              name: "contact",
+              list: "/contact",
+            },
+          ]}
+        >
+          <Routes>
+            <Route element={<Layout />}>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/services" element={<ServicesPage />} />
+              <Route path="/projects-done" element={<ProjectsDonePage />} />
+              <Route path="/current-project" element={<CurrentProjectPage />} />
+              <Route path="/future-project" element={<FutureProjectPage />} />
+              <Route path="/contact" element={<ContactPage />} />
+            </Route>
+          </Routes>
+        </Refine>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 
