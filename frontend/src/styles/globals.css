@@ -39,12 +39,12 @@ body {
 /* Using your existing variables for a cohesive look */
 #tagline-background {
   /* A smoother, multi-stop gradient using your primary and accent colors */
-  background: linear-gradient(135deg,
+  /* background: linear-gradient(135deg,
       hsl(var(--primary)) 0%,
       hsl(var(--accent)) 50%,
-      lightblue 100%);
-  border-radius: 1038px;
-  box-shadow: var(--shadow-xl);
+      lightblue 100%); */
+  /* border-radius: 1038px; */
+  /* box-shadow: var(--shadow-xl); */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -60,11 +60,30 @@ body {
   text-align: center;
   line-height: 1.2;
 
-  text-shadow:
+  /* text-shadow:
     0 4px 12px rgba(0, 0, 0, 0.1),
-    0 0 2rem hsla(140, 94%, 50%, 0.4);
+    0 0 2rem hsla(140, 94%, 50%, 0.4); */
 }
 
+#download-brochure-button {
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+  color: var(--primary-foreground);
+  border: none;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+}
+
+#download-brochure-button:hover {
+  box-shadow: 0 1rem 4px rgba(0, 0, 0, 0.2), 0 0 1rem hsl(var(--accent) / 0.5);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
+#download-brochure-button:hover .icon {
+  animation: pulse 1s infinite;
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
 
 :root {
   --background: 20 5.8824% 90%;

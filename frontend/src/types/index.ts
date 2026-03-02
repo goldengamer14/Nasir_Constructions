@@ -3,6 +3,17 @@ export interface EmailDomain {
   label: string;
 }
 
+export type ServiceOption = "new-construction"
+  | "building-repair"
+  |
+  "interior-exterior-design"
+  | "consultation"
+  | "buy-property"
+  | "sell-property"
+  | "layout-development"
+  | "other";
+export type RequirementType = "plot" | "layout" | "construction" | "repair" | "other";
+
 export interface UserFormData {
   email: string;
   emailDomain: string;
@@ -12,7 +23,7 @@ export interface UserFormData {
   address: string;
   city: string;
   state: string;
-  requirement: "plot" | "layout" | "construction" | "repair" | "other";
+  requirement: ServiceOption;
 }
 
 export interface CarouselImage {

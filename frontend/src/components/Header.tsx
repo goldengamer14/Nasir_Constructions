@@ -5,7 +5,7 @@ export const Header = () => {
   // Duplicate images for seamless loop
 
   return (
-    <div className="w-full bg-card rounded-2xl p-4 md:p-6 flex flex-col md:flex-row items-center gap-4">
+    <div className="w-full rounded-2xl p-4 md:p-6 flex flex-col md:flex-row items-center gap-4">
       {/* Mobile: stacked layout */}
       <div className="flex md:hidden w-full justify-between items-center">
         <img

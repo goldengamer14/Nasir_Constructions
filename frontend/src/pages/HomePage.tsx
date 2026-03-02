@@ -1,47 +1,53 @@
-import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { ImageCarousel } from "@/components/ImageCarousel";
 import { Header } from "@/components/Header";
-import type { CarouselImage, UserFormData } from "@/types";
-
+import { Link } from "react-router-dom";
+import services from "@/constants/services";
 import { carouselImages } from "@/constants/images";
+import ContactForm from "@/components/ContactForm";
 
 export const HomePage = () => {
-  const [formData, setFormData] = useState<UserFormData>({
-    email: "",
-    emailDomain: "@gmail.com",
-    phoneCountry: "91",
-    phoneNumber: "",
-    address: "",
-    city: "",
-    state: "",
-    requirement: "plot",
-  });
-
-  const [showCustomDomain, setShowCustomDomain] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-  };
-
   return (
     <div className="container mx-auto space-y-8 px-4 py-8">
       <Header />
 
       {/* Tagline Card */}
-      <Card id="tagline-background" className="border-0 shadow-lg">
+      <Card id="tagline-background" className="border-0 bg-background">
         <CardContent className="py-6 text-center">
           <h1 id="tagline" className="text-2xl font-bold text-primary-foreground md:text-3xl">
             STRONG CONSTRUCTION, YOUR UNBREAKABLE TRUST
           </h1>
         </CardContent>
       </Card>
+
+      {/* Clickable Service Cards Carousel */}
+      <div className="flex flex-row gap-4 overflow-x-auto pb-4 scrollbar-hide">
+        {services.map((service) => (
+          <Link
+            key={service.id}
+            to={`/services/${service.id}`}
+            className="block w-[220px] flex-shrink-0"
+            target="_blank"
+          >
+            <Card className="group relative cursor-pointer border-border bg-card shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 h-full overflow-hidden">
+              <CardContent className="relative z-10 p-5 text-center">
+                <div className="mb-3 text-4xl transition-transform duration-300 group-hover:scale-110">
+                  {service.icon}
+                </div>
+                <h5 className="mb-2 text-lg font-bold text-card-foreground leading-tight">
+                  {service.title}
+                </h5>
+                <p className="text-xs text-muted-foreground leading-normal">
+                  {service.description}
+                </p>
+                <div className="mt-3 text-xs text-primary font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+                  Learn more →
+                </div>
+              </CardContent>
+            </Card>
+          </Link>
+        ))}
+      </div>
 
       {/* Carousel */}
       <ImageCarousel images={carouselImages} />
@@ -106,151 +112,7 @@ export const HomePage = () => {
       </div>
 
       {/* Contact Form Card */}
-      <Card className="mx-auto max-w-2xl border-t-4 border-primary shadow-lg">
-        <CardHeader>
-          <CardTitle className="text-center text-2xl">Contact Us</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Email */}
-            <div className="space-y-2">
-              <Label htmlFor="email">Email Address</Label>
-              <div className="flex gap-2">
-                <Input
-                  id="email"
-                  type="text"
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  placeholder="Username"
-                  className="flex-1"
-                />
-                <Select
-                  value={formData.emailDomain}
-                  onValueChange={(value) => {
-                    setFormData({ ...formData, emailDomain: value });
-                    setShowCustomDomain(value === "@custom.com");
-                  }}
-                >
-                  <SelectTrigger className="w-[150px]">
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="@custom.com">@custom.com</SelectItem>
-                    <SelectItem value="@gmail.com">@gmail.com</SelectItem>
-                    <SelectItem value="@yahoo.com">@yahoo.com</SelectItem>
-                    <SelectItem value="@outlook.com">@outlook.com</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-              {showCustomDomain && (
-                <Input
-                  type="text"
-                  value={formData.customDomain}
-                  onChange={(e) => setFormData({ ...formData, customDomain: e.target.value })}
-                  placeholder="@domain.com"
-                />
-              )}
-            </div>
-
-            {/* Phone */}
-            <div className="space-y-2">
-              <Label htmlFor="phone">Phone Number</Label>
-              <div className="flex gap-2">
-                <div className="flex items-center">
-                  <span className="flex h-9 items-center rounded-l-md border border-r-0 border-input bg-background px-3 text-sm text-muted-foreground">
-                    +
-                  </span>
-                  <Input
-                    type="number"
-                    value={formData.phoneCountry}
-                    onChange={(e) => setFormData({ ...formData, phoneCountry: e.target.value })}
-                    className="w-[70px] rounded-l-none"
-                  />
-                </div>
-                <Input
-                  id="phone"
-                  type="number"
-                  value={formData.phoneNumber}
-                  onChange={(e) => setFormData({ ...formData, phoneNumber: e.target.value })}
-                  placeholder="1234567890"
-                  className="flex-1"
-                />
-              </div>
-            </div>
-
-            {/* Address */}
-            <div className="space-y-2">
-              <Label htmlFor="address">Address</Label>
-              <Input
-                id="address"
-                type="text"
-                value={formData.address}
-                onChange={(e) => setFormData({ ...formData, address: e.target.value })}
-                placeholder="Street, Apartment, or Landmark"
-              />
-              <div className="grid gap-3 md:grid-cols-2">
-                <Input
-                  type="text"
-                  value={formData.city}
-                  onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-                  placeholder="City"
-                />
-                <Input
-                  type="text"
-                  value={formData.state}
-                  onChange={(e) => setFormData({ ...formData, state: e.target.value })}
-                  placeholder="State"
-                />
-              </div>
-            </div>
-
-            {/* Requirements */}
-            <div className="space-y-3">
-              <Label>Requirement</Label>
-              <RadioGroup
-                value={formData.requirement}
-                onValueChange={(value: any) => setFormData({ ...formData, requirement: value })}
-                className="space-y-2"
-              >
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="plot" id="plot" />
-                  <Label htmlFor="plot" className="font-normal cursor-pointer">
-                    Plot
-                  </Label>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="layout" id="layout" />
-                  <Label htmlFor="layout" className="font-normal cursor-pointer">
-                    Layout
-                  </Label>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="construction" id="construction" />
-                  <Label htmlFor="construction" className="font-normal cursor-pointer">
-                    Construction
-                  </Label>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="repair" id="repair" />
-                  <Label htmlFor="repair" className="font-normal cursor-pointer">
-                    Repair
-                  </Label>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="other" id="other" />
-                  <Label htmlFor="other" className="font-normal cursor-pointer">
-                    Other
-                  </Label>
-                </div>
-              </RadioGroup>
-            </div>
-
-            <Button type="submit" className="w-full" size="lg">
-              Submit
-            </Button>
-          </form>
-        </CardContent>
-      </Card>
+      {/* <ContactForm /> */}
     </div>
   );
 };

@@ -5,6 +5,7 @@ import { Navbar } from "@/components/Navbar";
 import { HomePage } from "@/pages/HomePage";
 import { AboutPage } from "@/pages/AboutPage";
 import { ServicesPage } from "@/pages/ServicesPage";
+import { ServiceDetailPage } from "@/pages/ServiceDetailPage";
 import {
   ProjectsDonePage,
   CurrentProjectPage,
@@ -23,6 +24,16 @@ const Layout = () => {
     </div>
   );
 };
+
+const NoNavbarLayout = () => {
+  return (
+    <div className="min-h-screen bg-background">
+      <main className="pt-20">
+        <Outlet />
+      </main>
+    </div>
+  );
+}
 
 function App() {
   return (
@@ -70,6 +81,9 @@ function App() {
               <Route path="/current-project" element={<CurrentProjectPage />} />
               <Route path="/future-project" element={<FutureProjectPage />} />
               <Route path="/contact" element={<ContactPage />} />
+            </Route>
+            <Route element={<NoNavbarLayout />}>
+              <Route path="/services/:serviceId" element={<ServiceDetailPage />} />
             </Route>
           </Routes>
         </Refine>
