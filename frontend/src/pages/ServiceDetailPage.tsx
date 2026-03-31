@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import ContactForm from "@/components/ContactForm";
 import services from "@/constants/services";
 import { ServiceOption } from "@/types";
+import BuyPageExtra from "@/components/BuyPageExtra";
 
 export const ServiceDetailPage = () => {
     const { serviceId } = useParams<{ serviceId: string }>();
@@ -30,6 +31,10 @@ export const ServiceDetailPage = () => {
                 </CardContent>
             </Card>
 
+            {(service.id == "buy-property")
+                ? <BuyPageExtra service={service} />
+                : null}
+
             {/* Details Grid */}
             <div className="grid gap-8 md:grid-cols-2">
                 {/* What We Offer */}
@@ -41,12 +46,13 @@ export const ServiceDetailPage = () => {
                         </CardTitle>
                     </CardHeader>
                     <CardContent className="space-y-4">
-                        {service.details?.offers?.map((offer, index) => (
-                            <div key={index} className="flex items-start gap-3">
-                                <span className="text-primary text-xl mt-1 flex-shrink-0">✓</span>
-                                <p className="text-muted-foreground leading-relaxed">{offer}</p>
-                            </div>
-                        )) || (
+                        {service.details?.offers?.map((offer, index) => (service.id == "buy-property" && index > 5) ? null
+                            : (
+                                <div key={index} className="flex items-start gap-3">
+                                    <span className="text-primary text-xl mt-1 flex-shrink-0">✓</span>
+                                    <p className="text-muted-foreground leading-relaxed">{offer}</p>
+                                </div>
+                            )) || (
                                 <p className="text-muted-foreground">
                                     Professional {service.title.toLowerCase()} services.
                                 </p>

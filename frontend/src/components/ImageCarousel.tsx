@@ -9,7 +9,8 @@ interface ImageCarouselProps {
 }
 
 export const ImageCarousel = ({ images, autoPlayInterval = 3000 }: ImageCarouselProps) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const [isHovered, setIsHovered] = useState<boolean>(false);
 
   const showNextImage = useCallback(() => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -24,24 +25,24 @@ export const ImageCarousel = ({ images, autoPlayInterval = 3000 }: ImageCarousel
   }, []);
 
   useEffect(() => {
+    if (isHovered) return () => { }; // Pause auto-play on hover
+
     const interval = setInterval(showNextImage, autoPlayInterval);
     return () => clearInterval(interval);
-  }, [showNextImage, autoPlayInterval]);
+  }, [showNextImage, autoPlayInterval, isHovered]);
 
   return (
     <div className="relative mx-auto my-4 max-w-md">
       {/* Wrapper */}
       <div
-        className="home-imgs-wrapper relative overflow-hidden rounded-xl border-8 border-brand-primary bg-gradient-to-br from-brand-secondary to-brand-dark shadow-lg"
-        style={{ aspectRatio: "3/4" }}
-        onMouseEnter={(e) => {
-          const interval = (e.currentTarget as any).dataset.interval;
-          if (interval) clearInterval(parseInt(interval));
+        className="home-imgs-wrapper relative overflow-hidden rounded-xl border-8 bg-gradient-to-br shadow-lg"
+        style={{
+          aspectRatio: "3/4",
+          backgroundColor: "rgba(50, 50, 100, 0.1)",
+          borderColor: "rgba(50, 50, 100, 0.3)",
         }}
-        onMouseLeave={(e) => {
-          const newInterval = setInterval(showNextImage, autoPlayInterval);
-          (e.currentTarget as any).dataset.interval = newInterval.toString();
-        }}
+        onMouseEnter={() => { setIsHovered(true); console.log("Hovered"); }}
+        onMouseLeave={() => { setIsHovered(false); console.log("Not hovered"); }}
       >
         {/* Track */}
         <div

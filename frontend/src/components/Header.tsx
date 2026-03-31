@@ -22,8 +22,8 @@ export const Header = () => {
 
       {/* Desktop: Logo (left) */}
       <img
-        src="/imgs/Logo.jpg"
-        alt="Logo"
+        src={primaryImages.logo.src}
+        alt={primaryImages.logo.alt}
         className="hidden md:block h-[110px] w-[110px] rounded-full object-cover flex-shrink-0"
       />
 
@@ -43,8 +43,8 @@ export const Header = () => {
 
       {/* Desktop: Nasir Image (right) */}
       <img
-        src="/imgs/Nasir_Khan.jpg"
-        alt="Nasir Khan"
+        src={primaryImages.nasir.src}
+        alt={primaryImages.nasir.alt}
         className="hidden md:block h-[110px] w-[110px] rounded-full object-cover flex-shrink-0"
       />
     </div>

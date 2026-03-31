@@ -23,8 +23,24 @@ export interface UserFormData {
   address: string;
   city: string;
   state: string;
-  requirement: ServiceOption;
+  requirement: string;
 }
+
+export interface BuyPageExtraProps {
+  // Buy Property specific fields
+  propertyType: string;
+  budgetRange: string;
+  propertyLocation: string;
+  propertySize: string;
+  timeframe: string;
+
+  // Sell Property specific fields
+  sellPropertyType: string;
+  sellPropertyAge: string;
+  sellExpectedPrice: string;
+  sellPropertyCondition: string;
+  additionalNotes: string;
+};
 
 export interface CarouselImage {
   src: string;
