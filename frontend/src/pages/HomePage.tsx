@@ -52,29 +52,31 @@ export const HomePage = () => {
               </section>
 
               <div
-                className={`overflow-hidden transition-all duration-300 ease ${isOpen ? "max-h-[999px] opacity-100 py-4" : "max-h-0 opacity-0 py-0"
+                className={`overflow-hidden transition-all duration-300 ease ${isOpen ? "max-h-[999px] opacity-100" : "max-h-0 opacity-0"
                   }`}
               >
-                <div className="grid gap-3 p-2 sm:grid-cols-2 md:grid-cols-3">
-                  {groupedServices.map((service) => (
-                    <Link
-                      key={service!.id}
-                      to={`/services/${service!.id}`}
-                      className="block"
-                      target="_blank"
-                    >
-                      <Card className="group relative cursor-pointer border-primary bg-primary/20 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 h-full overflow-hidden">
-                        <CardContent className="relative z-10 p-5 text-center">
-                          <div className="mb-2 text-4xl">{service!.icon}</div>
-                          <h5 className="mb-2 text-lg font-bold text-card-foreground leading-tight">{service!.title}</h5>
-                          <p className="text-xs text-muted-foreground leading-normal">{service!.description}</p>
-                          <div className="mt-3 text-xs text-primary font-medium opacity-0 group-hover:opacity-100 transition-opacity">
-                            Learn more →
-                          </div>
-                        </CardContent>
-                      </Card>
-                    </Link>
-                  ))}
+                <div className="max-h-[600px] overflow-y-auto p-4">
+                  <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-3">
+                    {groupedServices.map((service) => (
+                      <Link
+                        key={service!.id}
+                        to={`/services/${service!.id}`}
+                        className="block"
+                        target="_blank"
+                      >
+                        <Card className="group relative cursor-pointer border-primary bg-primary/20 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 h-full overflow-hidden">
+                          <CardContent className="relative z-10 p-5 text-center">
+                            <div className="mb-2 text-4xl">{service!.icon}</div>
+                            <h5 className="mb-2 text-lg font-bold text-card-foreground leading-tight">{service!.title}</h5>
+                            <p className="text-xs text-muted-foreground leading-normal">{service!.description}</p>
+                            <div className="mt-3 text-xs text-primary font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+                              Learn more →
+                            </div>
+                          </CardContent>
+                        </Card>
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>

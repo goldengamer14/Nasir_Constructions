@@ -2,7 +2,12 @@ import { conveyorImages } from "@/constants/images";
 import { primaryImages } from "@/constants/images";
 
 export const Header = () => {
-  // Duplicate images for seamless loop
+  const desktopPrimaryImageClasses = "hidden md:block h-[110px] w-[110px] rounded-full object-cover flex-shrink-0",
+    mobilePrimaryImageClasses = "h-[90px] w-[90px] rounded-full object-cover flex-shrink-0",
+    conveyorImageClasses = "h-[100px] w-[100px] mr-[30px] rounded-lg object-cover aspect-square flex-shrink-0";
+
+  // Animation duration: 26 images × 3 seconds per image = 78 seconds
+  const animationDuration = `${conveyorImages.length / 1}s`;
 
   return (
     <div className="w-full rounded-2xl p-4 md:p-6 flex flex-col md:flex-row items-center gap-4">
@@ -11,12 +16,12 @@ export const Header = () => {
         <img
           src={primaryImages.logo.src}
           alt={primaryImages.logo.alt}
-          className="h-[90px] w-[90px] rounded-full object-cover flex-shrink-0"
+          className={mobilePrimaryImageClasses}
         />
         <img
           src={primaryImages.nasir.src}
           alt={primaryImages.nasir.alt}
-          className="h-[90px] w-[90px] rounded-full object-cover flex-shrink-0"
+          className={mobilePrimaryImageClasses}
         />
       </div>
 
@@ -24,18 +29,24 @@ export const Header = () => {
       <img
         src={primaryImages.logo.src}
         alt={primaryImages.logo.alt}
-        className="hidden md:block h-[110px] w-[110px] rounded-full object-cover flex-shrink-0"
+        className={desktopPrimaryImageClasses}
       />
 
       {/* Conveyor Belt */}
       <div className="w-full overflow-hidden h-[110px] flex items-center flex-grow md:mx-10">
-        <div className="slider-track flex w-max animate-scroll-left hover:pause">
+        <div
+          className="slider-track flex w-max"
+          style={{
+            animation: `scroll-left ${animationDuration} linear infinite`,
+            animationDelay: "1s",
+          }}
+        >
           {conveyorImages.map((img, index) => (
             <img
               key={index}
               src={img.src}
               alt={img.alt}
-              className="h-[100px] w-[180px] mr-[30px] rounded-lg object-cover flex-shrink-0"
+              className={conveyorImageClasses}
             />
           ))}
         </div>
@@ -45,7 +56,7 @@ export const Header = () => {
       <img
         src={primaryImages.nasir.src}
         alt={primaryImages.nasir.alt}
-        className="hidden md:block h-[110px] w-[110px] rounded-full object-cover flex-shrink-0"
+        className={desktopPrimaryImageClasses}
       />
     </div>
   );
