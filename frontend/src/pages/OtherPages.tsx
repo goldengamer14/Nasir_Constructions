@@ -70,7 +70,7 @@ export const ContactPage = () => {
                 📞
               </div>
               <h3 className="text-xl font-bold text-card-foreground">Phone</h3>
-              <p className="text-lg text-muted-foreground">+91 1234567890</p>
+              <p className="text-lg text-muted-foreground">+91 97308 60148</p>
             </div>
             
             <div className="h-px bg-border"></div>
@@ -80,7 +80,7 @@ export const ContactPage = () => {
                 ✉️
               </div>
               <h3 className="text-xl font-bold text-card-foreground">Email</h3>
-              <p className="text-lg text-muted-foreground">info@nasirconstructions.com</p>
+              <p className="text-lg text-muted-foreground">nkhan8187@gmail.com</p>
             </div>
             
             <div className="h-px bg-border"></div>
@@ -91,9 +91,7 @@ export const ContactPage = () => {
               </div>
               <h3 className="text-xl font-bold text-card-foreground">Address</h3>
               <p className="text-lg text-muted-foreground">
-                Buldhana & Akola District
-                <br />
-                Maharashtra, India
+                 712, Khamu Jamdar Nagar, Tq. - Shegaon - 444203, <br />District Buldhana, Maharashtra, India
               </p>
             </div>
           </div>

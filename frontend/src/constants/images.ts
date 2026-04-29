@@ -3,8 +3,8 @@ import type { CarouselImage } from "@/types";
 const CLOUDINARY_URL = "https://res.cloudinary.com/dl5ptl1zm/image/upload/v1774958962";
 
 export const carouselImages: CarouselImage[] = [
-  { src: `${CLOUDINARY_URL}/Certificate_kvmnfu.jpg`, alt: "Certificate 1" },
-  { src: `${CLOUDINARY_URL}/Certificate_2_dsvgzo.jpg`, alt: "Certificate 2" }
+  { src: `${CLOUDINARY_URL}/Udyam_Certificate_1_blinky.jpg`, alt: "Certificate 1" },
+  { src: `${CLOUDINARY_URL}/Vikamshi_Fabrics_Pvt_Ltd.jpg_ok1wha.jpg`, alt: "Certificate 2" }
 ];
 
 const conveyorImageBase: CarouselImage[] = [
@@ -27,7 +27,7 @@ export const conveyorImages: CarouselImage[] = [...conveyorImageBase, ...conveyo
 
 export const primaryImages = {
   logo: {
-    src: `${CLOUDINARY_URL}/Logo_rntzxp.jpg`,
+    src: `https://res.cloudinary.com/dl5ptl1zm/image/upload/e_vibrance/v1774958962/the_logo_azmbat.jpg`,
     alt: "Al Nasir Logo"
   },
   nasir: {
