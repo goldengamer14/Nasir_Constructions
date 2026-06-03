@@ -1,10 +1,12 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ImageCarousel } from "@/components/ImageCarousel";
 import { Header } from "@/components/Header";
+import { ProductShowcase } from "@/components/ProductShowcase";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import services, { servicesGroups } from "@/constants/services";
 import { carouselImages } from "@/constants/images";
+import { productRows } from "@/constants/products";
 
 export const HomePage = () => {
   const [activeGroup, setActiveGroup] = useState<string | null>(null);
@@ -26,7 +28,10 @@ export const HomePage = () => {
         </CardContent>
       </Card>
 
-      {/* Collapsible service groups (new block) */}
+      {/* Product Showcase — Construction Materials & Farmer's Market */}
+      <ProductShowcase rows={productRows} />
+
+      {/* Collapsible service groups */}
       <div className="space-y-3">
         {servicesGroups.map((groupConfig) => {
           const groupedServices = groupConfig.group
@@ -145,9 +150,6 @@ export const HomePage = () => {
           </Card>
         </div>
       </div>
-
-      {/* Contact Form Card */}
-      {/* <ContactForm /> */}
     </div>
   );
 };

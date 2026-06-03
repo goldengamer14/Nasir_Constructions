@@ -52,3 +52,25 @@ export interface NavItem {
   label: string;
   path: string;
 }
+
+// ADD these to your existing frontend/src/types/index.ts
+
+export interface ProductCard {
+  id: string;
+  name: string;                  // Product name (can be Marathi/Hindi/English)
+  nameLocal?: string;            // Optional local language name e.g. "गहू"
+  image: string;                 // Image URL or path
+  description: string;           // Short description
+  rating: number;                // 1.0 – 5.0
+  reviewCount?: number;          // Optional: number of reviews
+  unit?: string;                 // e.g. "per bag", "per quintal", "per kg"
+  priceLabel?: string;           // e.g. "₹350/bag" — optional, shown if provided
+  badge?: string;                // Optional badge e.g. "Best Seller", "Fresh Harvest"
+  category: "construction" | "farm";
+}
+
+export interface ProductRowProps {
+  title: string;                 // English heading
+  titleLocal: string;            // Marathi/Hindi heading
+  products: ProductCard[];
+}
