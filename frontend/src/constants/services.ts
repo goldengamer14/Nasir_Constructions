@@ -866,12 +866,492 @@ const services: Service[] = [
       ],
     },
   },
+  {
+    id: "construction-planning-bim",
+    icon: "🗺️",
+    title: "Construction Planning & BIM",
+    description: "Digital planning, cost estimation, and coordinated building models for efficient execution.",
+    details: {
+      offers: [
+        "Construction cost and material estimation",
+        "3D BIM modelling and drawing coordination",
+        "Project timeline and labour planning",
+        "MEP clash detection before construction",
+        "Progress reporting and documentation",
+      ],
+      benefits: [
+        "Better control over project cost and schedule",
+        "Fewer design conflicts and site rework",
+        "Accurate material and manpower planning",
+        "Clear project visibility for clients",
+        "Improved coordination between contractors",
+      ],
+      process: [
+        {
+          title: "Requirement Study",
+          description: "Review the site, drawings, budget, and construction goals.",
+        },
+        {
+          title: "Digital Planning",
+          description: "Prepare estimates, schedules, and coordinated building models.",
+        },
+        {
+          title: "Execution Support",
+          description: "Track progress and resolve coordination issues during construction.",
+        },
+        {
+          title: "Project Reporting",
+          description: "Deliver progress records, updates, and final documentation.",
+        },
+      ],
+    },
+  },
+  {
+    id: "smart-construction-monitoring",
+    icon: "📡",
+    title: "Smart Construction Monitoring",
+    description: "Technology-assisted monitoring for construction quality, progress, and site safety.",
+    details: {
+      offers: [
+        "Construction progress monitoring and reporting",
+        "Concrete strength and structural health checks",
+        "Crack detection and quality inspections",
+        "Site safety and compliance audits",
+        "Material usage and waste monitoring",
+      ],
+      benefits: [
+        "Early identification of quality issues",
+        "Improved safety compliance on site",
+        "Reduced material waste and delays",
+        "Reliable progress records",
+        "Better long-term structural performance",
+      ],
+      process: [
+        {
+          title: "Monitoring Plan",
+          description: "Identify project milestones, risks, and quality checkpoints.",
+        },
+        {
+          title: "Site Setup",
+          description: "Configure inspection schedules and monitoring tools.",
+        },
+        {
+          title: "Regular Inspection",
+          description: "Track progress, safety, materials, and structural quality.",
+        },
+        {
+          title: "Corrective Report",
+          description: "Share findings and practical corrective recommendations.",
+        },
+      ],
+    },
+  },
+  {
+    id: "electrical-plumbing-services",
+    icon: "🔌",
+    title: "Electrical & Plumbing Services",
+    description: "Complete electrical wiring, plumbing, sanitary fitting, and utility installation.",
+    details: {
+      offers: [
+        "Electrical wiring, earthing, switches, and distribution boards",
+        "Lighting, fan, and fixture installation",
+        "Water supply and drainage pipe laying",
+        "Tap, valve, toilet, and bathroom fitting",
+        "Leak detection and repair work",
+      ],
+      benefits: [
+        "Safe and reliable utility systems",
+        "Coordinated installation with construction work",
+        "Reduced leakage and electrical faults",
+        "Quality fittings and workmanship",
+        "Maintenance and repair support",
+      ],
+      process: [
+        {
+          title: "Site Inspection",
+          description: "Assess utility requirements and existing connections.",
+        },
+        {
+          title: "Layout Planning",
+          description: "Plan electrical points, pipe routes, and fixtures.",
+        },
+        {
+          title: "Installation",
+          description: "Complete wiring, plumbing, testing, and fitting work.",
+        },
+        {
+          title: "Safety Testing",
+          description: "Verify electrical safety, water pressure, and drainage flow.",
+        },
+      ],
+    },
+  },
+  {
+    id: "waterproofing-sealing",
+    icon: "☔",
+    title: "Waterproofing & Sealing",
+    description: "Protection against roof leakage, wall seepage, dampness, and joint failure.",
+    details: {
+      offers: [
+        "Roof and terrace waterproofing",
+        "Bathroom, balcony, and water tank treatment",
+        "Liquid membrane waterproofing",
+        "Crack grouting and joint sealing",
+        "Leakage inspection and repair",
+      ],
+      benefits: [
+        "Prevents costly water damage",
+        "Protects walls, ceilings, and foundations",
+        "Improves building life and hygiene",
+        "Suitable solutions for old and new buildings",
+        "Professional testing after application",
+      ],
+      process: [
+        {
+          title: "Leak Inspection",
+          description: "Locate seepage sources and assess damaged surfaces.",
+        },
+        {
+          title: "Surface Preparation",
+          description: "Clean, repair, and prepare the treatment area.",
+        },
+        {
+          title: "Waterproofing",
+          description: "Apply the selected membrane, coating, or sealing system.",
+        },
+        {
+          title: "Water Test",
+          description: "Test treated areas and complete final finishing.",
+        },
+      ],
+    },
+  },
+  {
+    id: "painting-flooring-finishing",
+    icon: "🎨",
+    title: "Painting, Flooring & Finishing",
+    description: "Professional surface finishing for beautiful, durable, and ready-to-use spaces.",
+    details: {
+      offers: [
+        "Interior and exterior wall painting",
+        "Primer, putty, texture, emulsion, and enamel work",
+        "Floor and wall tile installation",
+        "Floor polishing, grouting, and sealing",
+        "POP, gypsum false ceiling, and wallpaper work",
+      ],
+      benefits: [
+        "Clean and consistent professional finish",
+        "Durable surfaces with easier maintenance",
+        "Coordinated colours, flooring, and ceiling design",
+        "Suitable for new construction and renovation",
+        "Careful final cleaning and handover",
+      ],
+      process: [
+        {
+          title: "Design Selection",
+          description: "Select colours, materials, patterns, and finish levels.",
+        },
+        {
+          title: "Surface Preparation",
+          description: "Repair, level, clean, and prepare all surfaces.",
+        },
+        {
+          title: "Finishing Work",
+          description: "Complete painting, tiling, polishing, and ceiling work.",
+        },
+        {
+          title: "Quality Check",
+          description: "Inspect alignment, finish quality, and final cleanliness.",
+        },
+      ],
+    },
+  },
+  {
+    id: "solar-security-systems",
+    icon: "☀️",
+    title: "Solar & Security Systems",
+    description: "Solar power, CCTV, alarm, and fire-safety installations for modern properties.",
+    details: {
+      offers: [
+        "Solar panel installation and setup",
+        "CCTV camera mounting and configuration",
+        "Alarm system wiring and installation",
+        "LED street light installation",
+        "Fire extinguisher planning and placement",
+      ],
+      benefits: [
+        "Lower electricity costs with solar energy",
+        "Improved property and site security",
+        "Better night-time visibility",
+        "Practical fire-safety readiness",
+        "Single-team installation and support",
+      ],
+      process: [
+        {
+          title: "Requirement Survey",
+          description: "Assess power, surveillance, lighting, and safety needs.",
+        },
+        {
+          title: "System Design",
+          description: "Plan equipment locations, wiring, and capacity.",
+        },
+        {
+          title: "Installation",
+          description: "Install equipment and complete all connections.",
+        },
+        {
+          title: "Testing & Training",
+          description: "Test each system and explain its operation.",
+        },
+      ],
+    },
+  },
+  {
+    id: "road-paver-development",
+    icon: "🛣️",
+    title: "Road & Paver Development",
+    description: "Site roads, pathways, paver blocks, and supporting outdoor infrastructure.",
+    details: {
+      offers: [
+        "Internal road and pathway construction",
+        "Paver block laying and finishing",
+        "Land levelling and site preparation",
+        "Drainage and roadside utility planning",
+        "LED street light installation",
+      ],
+      benefits: [
+        "Improved property access and usability",
+        "Durable, low-maintenance outdoor surfaces",
+        "Better drainage and safer movement",
+        "Suitable for layouts, farms, and commercial sites",
+        "Complete preparation through finishing",
+      ],
+      process: [
+        {
+          title: "Site Survey",
+          description: "Measure levels, routes, drainage, and expected traffic.",
+        },
+        {
+          title: "Ground Preparation",
+          description: "Complete excavation, levelling, and base compaction.",
+        },
+        {
+          title: "Road & Paver Work",
+          description: "Build the selected road, pathway, or paver surface.",
+        },
+        {
+          title: "Final Inspection",
+          description: "Check levels, drainage, edges, and surface finish.",
+        },
+      ],
+    },
+  },
+  {
+    id: "landscaping-plantation",
+    icon: "🌳",
+    title: "Landscaping & Plantation",
+    description: "Landscaping, tree plantation, and green-space development for farms and properties.",
+    details: {
+      offers: [
+        "Landscape planning and site preparation",
+        "Tree plantation and sapling installation",
+        "Garden, lawn, and green-space development",
+        "Soil improvement and irrigation planning",
+        "Seasonal maintenance guidance",
+      ],
+      benefits: [
+        "Improved appearance and property value",
+        "Healthier and more usable outdoor spaces",
+        "Better shade, soil protection, and water retention",
+        "Plant selection suited to local conditions",
+        "Organized long-term maintenance plan",
+      ],
+      process: [
+        {
+          title: "Site Assessment",
+          description: "Review soil, sunlight, water, and intended use.",
+        },
+        {
+          title: "Landscape Plan",
+          description: "Select plants and prepare a practical layout.",
+        },
+        {
+          title: "Plantation",
+          description: "Prepare the land and install plants and irrigation.",
+        },
+        {
+          title: "Maintenance Plan",
+          description: "Provide watering, nutrition, and care guidance.",
+        },
+      ],
+    },
+  },
+  {
+    id: "greenhouse-nursery-development",
+    icon: "🌱",
+    title: "Greenhouse & Nursery Development",
+    description: "Greenhouse structures, nursery setup, and protected cultivation support.",
+    details: {
+      offers: [
+        "Greenhouse and shade-net structure erection",
+        "Nursery layout and growing-area setup",
+        "Irrigation and climate-control planning",
+        "Agri-plastic covering and utility installation",
+        "Operational setup and maintenance guidance",
+      ],
+      benefits: [
+        "Protected and controlled crop production",
+        "Efficient use of water and growing space",
+        "Improved seedling quality and survival",
+        "Longer growing seasons",
+        "Scalable setup for commercial farming",
+      ],
+      process: [
+        {
+          title: "Crop & Site Study",
+          description: "Assess the crops, climate, water, and production goals.",
+        },
+        {
+          title: "Structure Design",
+          description: "Plan the greenhouse or nursery layout and utilities.",
+        },
+        {
+          title: "Installation",
+          description: "Erect the structure and install growing systems.",
+        },
+        {
+          title: "Operational Handover",
+          description: "Test systems and provide usage and care guidance.",
+        },
+      ],
+    },
+  },
+  {
+    id: "farm-machinery-support",
+    icon: "🚜",
+    title: "Farm Machinery & Operations Support",
+    description: "Skilled support for farm equipment operation, maintenance, and field preparation.",
+    details: {
+      offers: [
+        "Tractor, rotavator, sprayer, and harvester operation",
+        "Land preparation, ploughing, and tilling",
+        "Pump-set and farm equipment maintenance",
+        "Equipment inspection and minor repair",
+        "Seasonal field-operation support",
+      ],
+      benefits: [
+        "Reliable access to skilled operators",
+        "Faster and more consistent field work",
+        "Reduced equipment downtime",
+        "Safer use of agricultural machinery",
+        "Flexible support for seasonal requirements",
+      ],
+      process: [
+        {
+          title: "Work Assessment",
+          description: "Review the field, equipment, and required operation.",
+        },
+        {
+          title: "Resource Planning",
+          description: "Arrange suitable machinery, operators, and timing.",
+        },
+        {
+          title: "Field Operation",
+          description: "Complete the planned work with safety checks.",
+        },
+        {
+          title: "Equipment Review",
+          description: "Inspect equipment and report maintenance needs.",
+        },
+      ],
+    },
+  },
+  {
+    id: "post-harvest-processing",
+    icon: "🌾",
+    title: "Post-Harvest Processing",
+    description: "Crop handling, grading, packing, and storage support after harvest.",
+    details: {
+      offers: [
+        "Threshing, winnowing, and cleaning",
+        "Sorting, quality checking, and grading",
+        "Bagging, packing, and product labelling",
+        "Dry and cold storage coordination",
+        "Loading and handling support",
+      ],
+      benefits: [
+        "Reduced post-harvest loss and spoilage",
+        "Improved product quality and market readiness",
+        "Organized packing and storage",
+        "Better handling efficiency",
+        "Support from harvest through dispatch",
+      ],
+      process: [
+        {
+          title: "Produce Assessment",
+          description: "Review crop condition, quantity, and handling needs.",
+        },
+        {
+          title: "Cleaning & Grading",
+          description: "Prepare and classify produce for its target market.",
+        },
+        {
+          title: "Packing",
+          description: "Pack and label products for storage or transport.",
+        },
+        {
+          title: "Storage & Dispatch",
+          description: "Coordinate safe storage, loading, and movement.",
+        },
+      ],
+    },
+  },
+  {
+    id: "agri-logistics-support",
+    icon: "🚚",
+    title: "Agricultural Logistics Support",
+    description: "Practical storage, inventory, packing, and delivery coordination for agricultural goods.",
+    details: {
+      offers: [
+        "Warehouse receiving and inventory support",
+        "Picking, packing, and order preparation",
+        "Cold-storage handling coordination",
+        "Delivery and return-pickup coordination",
+        "Supply-chain documentation support",
+      ],
+      benefits: [
+        "Organized movement from farm to buyer",
+        "Reduced handling delays and product damage",
+        "Improved inventory visibility",
+        "Reliable packing and dispatch preparation",
+        "Flexible support for bulk and regular orders",
+      ],
+      process: [
+        {
+          title: "Logistics Planning",
+          description: "Review products, volumes, storage, and delivery needs.",
+        },
+        {
+          title: "Receiving & Storage",
+          description: "Coordinate safe receiving and inventory placement.",
+        },
+        {
+          title: "Order Preparation",
+          description: "Pick, pack, label, and prepare goods for dispatch.",
+        },
+        {
+          title: "Delivery Coordination",
+          description: "Track movement and manage delivery documentation.",
+        },
+      ],
+    },
+  },
 ];
 
 export const servicesGroups = [
   {
     title: "Agriculture",
-    group: ["agricultural-land-development", "agricultural-water-management", "agricultural-infrastructure-development"]
+    group: ["agricultural-land-development", "agricultural-water-management", "agricultural-infrastructure-development", "greenhouse-nursery-development"]
   },
   {
     title: "Smart Farming",
@@ -879,11 +1359,11 @@ export const servicesGroups = [
   },
   {
     title: "Farm Systems",
-    group: ["electric-fencing", "boundary-wall", "water-filter-plant", "warehouse-storage", "well-excavation", "borewell-excavation"]
+    group: ["electric-fencing", "warehouse-storage", "boundary-wall", "water-filter-plant", "borewell-excavation"]
   },
   {
     title: "Infrastructure",
-    group: ["demolition", "renovation", "new-construction", "interior-exterior-design", "layout-demarkation", "layout-development"]
+    group: ["new-construction", "interior-exterior-design", "demolition", "layout-demarkation", "layout-development", "renovation", "construction-planning-bim", "electrical-plumbing-services"]
   },
   {
     title: "E-Commerce",

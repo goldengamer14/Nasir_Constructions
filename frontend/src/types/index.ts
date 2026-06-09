@@ -3,15 +3,7 @@ export interface EmailDomain {
   label: string;
 }
 
-export type ServiceOption = "new-construction"
-  | "building-repair"
-  |
-  "interior-exterior-design"
-  | "consultation"
-  | "buy-property"
-  | "sell-property"
-  | "layout-development"
-  | "other";
+export type ServiceOption = string;
 export type RequirementType = "plot" | "layout" | "construction" | "repair" | "other";
 
 export interface UserFormData {
