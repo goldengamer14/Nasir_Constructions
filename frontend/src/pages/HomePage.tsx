@@ -7,6 +7,7 @@ import { useState } from "react";
 import services, { servicesGroups } from "@/constants/services";
 import { carouselImages } from "@/constants/images";
 import { productRows } from "@/constants/products";
+import TableServices from "@/components/TableServices";
 
 export const HomePage = () => {
   const [activeGroup, setActiveGroup] = useState<string | null>(null);
@@ -23,10 +24,13 @@ export const HomePage = () => {
       <Card id="tagline-background" className="border-0 bg-background">
         <CardContent className="py-6 text-center">
           <h1 id="tagline" className="text-2xl font-bold text-primary-foreground md:text-3xl">
-            STRONG CONSTRUCTION, YOUR UNBREAKABLE TRUST
+            NIRMAN SE VISHWAS TAK
           </h1>
         </CardContent>
       </Card>
+
+      {/* Table Services */}
+      <TableServices />
 
       {/* Product Showcase — Construction Materials & Farmer's Market */}
       <ProductShowcase rows={productRows} />

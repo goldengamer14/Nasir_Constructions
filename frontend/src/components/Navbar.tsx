@@ -31,7 +31,7 @@ export const Navbar = () => {
         <div className="flex h-16 items-center justify-between">
           {/* Brand */}
           <Link to="/" className="text-xl font-bold text-primary hover:text-primary/80 transition-colors">
-            Nasir Constructions
+            Al Nasir Group Of India
           </Link>
 
           {/* Desktop Menu */}
