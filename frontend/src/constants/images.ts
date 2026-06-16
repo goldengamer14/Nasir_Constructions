@@ -1,6 +1,7 @@
 import type { CarouselImage } from "@/types";
 
 const CLOUDINARY_URL = "https://res.cloudinary.com/dl5ptl1zm/image/upload/v1774958962";
+const CLOUDINARY_400_URL = "https://res.cloudinary.com/dl5ptl1zm/image/upload/f_auto,q_auto,w_400,h_400,c_fill/v1774958962";
 
 export const carouselImages: CarouselImage[] = [
   { src: `${CLOUDINARY_URL}/Udyam_Certificate_1_blinky.jpg`, alt: "Certificate 1" },
@@ -51,3 +52,11 @@ export const projectImages = {
   },
 };
 
+export const homeImages: Record<string, string> = {
+  "audio": `${CLOUDINARY_400_URL}/Audio_sfkl5g.avif`,
+  "video": `${CLOUDINARY_400_URL}/Video_iv1uqo.png`,
+  "upload": `${CLOUDINARY_400_URL}/Upload_zzr6ms.jpg`,
+  "downloads": `${CLOUDINARY_400_URL}/Donwloads_gatvzt.jpg`,
+  "camera": `${CLOUDINARY_400_URL}/Camera_j5dp1t.png`,
+  "speaker": `${CLOUDINARY_400_URL}/Audio_lgod54.webp`,
+};

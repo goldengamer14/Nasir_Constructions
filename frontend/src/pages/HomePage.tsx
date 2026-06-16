@@ -5,7 +5,7 @@ import { ProductShowcase } from "@/components/ProductShowcase";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import services, { servicesGroups } from "@/constants/services";
-import { carouselImages } from "@/constants/images";
+import { carouselImages, homeImages } from "@/constants/images";
 import { productRows } from "@/constants/products";
 import TableServices from "@/components/TableServices";
 
@@ -28,6 +28,24 @@ export const HomePage = () => {
           </h1>
         </CardContent>
       </Card>
+
+      {/* Front Image Buttons */}
+      <div className="grid w-full grid-cols-2 gap-4 p-4 sm:grid-cols-3 md:grid-cols-6 md:p-6">
+        {Object.entries(homeImages).map(([image, src]) => (
+          <button
+            type="button"
+            key={image}
+            className="group mx-auto flex aspect-square size-24 items-center justify-center overflow-hidden rounded-[var(--radius)] border border-border bg-card p-2 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:size-28 md:size-24 lg:size-32"
+            aria-label={image}
+          >
+            <img
+              src={src}
+              alt={image}
+              className="h-full w-full rounded-[calc(var(--radius)-0.5rem)] object-cover transition-transform duration-300 group-hover:scale-110"
+            />
+          </button>
+        ))}
+      </div>
 
       {/* Table Services */}
       <TableServices />
